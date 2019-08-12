@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  /* ----------------banner---------------- */
+  
+  header{
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+  }
+  
+  header ul{
+    list-style: none;
+  }
+  header li{
+    display: inline-block;
+  }
+  header li::after{
+    content: "";
+    margin-right: 15px;
+  }
+  
+  /* ----------------content---------------- */
+  
+  main{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  h2{
+    align-self: center;
+  }
+  
+  .quiz fieldset{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    align-self: flex-start;
+    display: flex;
+  }
+  
+  label{
+    border: 1px solid grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+  }
+  button[type="submit"]{
+    width: 100%;
+    font-style: bold;
+    text-align: start;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  /*  */
+  label:hover, input[type="radio"]:checked,
+  button[type="submit"]:focus,
+  button[type="submit"]:hover{
+    background-color: grey;
+    border: 1px solid black;
+    color: white;
+  }
+  
+  

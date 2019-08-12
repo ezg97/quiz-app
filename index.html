@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Unkown Quiz App</title>
+    <meta name="description" content="See how many unpopular/unknown facts you know">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>Question: <span class="question">1</span>/10</li>
+        <li>Score: <span class="score">0</span>%</li>
+      </ul>
+    </header>
+
+    <main role="main">
+      <h2 class="question-block">
+        Question 1
+      </h2>
+
+      <form role="form" class="quiz" >
+        <fieldset>
+          <!--Not using "for" keyword for the label or "id's" for the input
+          that way clicking the text of the answer will select the radio button.
+          The easiest way (from what I've found) to allow the label to select 
+          the radio button AND to make focusing possible while tabbing through 
+          radio buttons, will be by using JS. I can't get it to work any other way (so far)-->
+          <label>
+          <input name="answers" type="radio" required>
+          <span>A</span>
+          </label>
+          <label>
+          <input name="answers" type="radio" required>
+          <span>B</span>
+          </label>
+          <label>
+          <input name="answers" type="radio" required>
+          <span>C</span>
+          </label>
+          <label>
+          <input name="answers" type="radio" required>
+          <span>D</span>
+          </label>
+          <button type="submit" class="submitButton">Submit</button>
+    </fieldset>
+    </form>
+
+
+    </main>
+  </body>
+</html>
