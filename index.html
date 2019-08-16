@@ -6,48 +6,47 @@
     <title>Unkown Quiz App</title>
     <meta name="description" content="See how many unpopular/unknown facts you know">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   </head>
   <body>
+
+    <!-- BANNER -->
     <header>
       <ul>
-        <li>Question: <span class="question">1</span>/10</li>
+        <li>Question: <span class="question">0</span>/10</li>
         <li>Score: <span class="score">0</span>%</li>
       </ul>
     </header>
-
+    
     <main role="main">
-      <h2 class="question-block">
-        Question 1
-      </h2>
+        <!-- START SCREEN -->
+        <div class='start-screen'>
+            <h2>The Quiz of Unkown Facts</h2>
+            <button onclick="startQuizButton()" type="button" class="startButton">Start Quiz</button>
+        </div>
 
-      <form role="form" class="quiz" >
+      <!-- QUIZ -->
+      <form role="form" class="quiz hide" >
         <fieldset>
           <!--Not using "for" keyword for the label or "id's" for the input
           that way clicking the text of the answer will select the radio button.
           The easiest way (from what I've found) to allow the label to select 
           the radio button AND to make focusing possible while tabbing through 
-          radio buttons, will be by using JS. I can't get it to work any other way (so far)-->
-          <label>
-          <input name="answers" type="radio" required>
-          <span>A</span>
-          </label>
-          <label>
-          <input name="answers" type="radio" required>
-          <span>B</span>
-          </label>
-          <label>
-          <input name="answers" type="radio" required>
-          <span>C</span>
-          </label>
-          <label>
-          <input name="answers" type="radio" required>
-          <span>D</span>
-          </label>
-          <button type="submit" class="submitButton">Submit</button>
-    </fieldset>
-    </form>
+          radio buttons, will be by using JS. I can't get it to work any other way (so far)-->    
+        </fieldset>
+        </form>
 
+        <!-- RESULTS -->
+        <div class="result hide">
+                <h2>Result</h2>
+        </div>
+
+        <!-- END QUIZ -->
+        <div class="end-screen hide">
+        </div>
 
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
