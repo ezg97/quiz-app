@@ -219,10 +219,29 @@
         justify-content: center;
         margin-top: 100px;
       }
+     .start-screen, .end-screen{
+       width: 80%;
+
+     }
       .result button{
           width: 15%;
       }
       
+}
+
+/* computer screen */
+@media screen and (min-width: 1024px) {
+  
+   .start-screen, .end-screen{
+     width: 60%;
+     max-width: 400px;
+
+   }
+    .result button{
+        width: 15%;
+        max-width: 200px;
+    }
+    
 }
 
  /* ----------------Hide ---------------- */
