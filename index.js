@@ -2,7 +2,7 @@
 // DATA
 const QA = [
     {
-        question: "A civil law suit brought fourth by the family of Martin Luthor King Jr. found ___ to be a involved in his assisnation?",
+        question: "A civil law suit brought fourth by the family of Martin Luthor King Jr. found ___ to be involved in his assisnation?",
         answers: ['A hate group in America',
         'James Earl Ray',
         'The United States federal government',
@@ -53,7 +53,7 @@ const QA = [
         src: "https://timeline.com/business-plot-overthrow-fdr-9a59a012c32a",
     },
     {
-        question: "What American president flew on a private jet, called the \"lolita express\", 26 times which was owned by child sex trafficer Jeff Epstein",
+        question: "What American president flew on a private jet, called the \"lolita express\", 26 times which was owned by child sex trafficker Jeff Epstein",
         answers: ['Bill Clinton',
         'George W. Bush',
         'Barack Hussein Obama',
