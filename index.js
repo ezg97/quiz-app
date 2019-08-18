@@ -2,7 +2,7 @@
 // DATA
 const QA = [
     {
-        question: "A civil law suit brought fourth by the family of Martin Luthor King Jr. found ___ to be involved in his assisnation?",
+        question: "A civil lawsuit brought forth by the family of Martin Luthor King Jr. found ___ to be involved in his assisnation?",
         answers: ['A hate group in America',
         'James Earl Ray',
         'The United States federal government',
@@ -16,14 +16,14 @@ const QA = [
         question: "Which of the following is true about Adolf Hitler?",
         answers: ['He died before world war 2 ended',
         'He committed suicide once he realized he had lost the war',
-        'He escaped to Antartica',
+        'He escaped to Antarctica',
         'He escaped to Argentina'],
         correct_answer: 3,
         img:'https://ichef.bbci.co.uk/news/976/cpsprodpb/C892/production/_107264315_d-daylandings.jpg',
         src: "https://vault.fbi.gov/adolf-hitler/adolf-hitler-part-01-of-04/view",
     },
     {
-        question: "How many buildings fell in new york on September 9, 2001 (9/11)?",
+        question: "How many buildings fell in New York on September 9, 2001 (9/11)?",
         answers: ['1',
         '2',
         '3',
@@ -33,7 +33,7 @@ const QA = [
         src: "https://www.nist.gov/pba/questions-and-answers-about-nist-wtc-7-investigation",
     },
     {
-        question: "The United States of America's Congress passed a constitutional ammendment that made what legal?",
+        question: "The United States of America's Congress passed a constitutional amendment that, if had been ratified by three-fourths of the States, would have made what legal?",
         answers: ['Abortion',
         'Slavery',
         'Treason',
@@ -43,11 +43,11 @@ const QA = [
         src: "https://www.thoughtco.com/corwin-amendment-slavery-and-lincoln-4160928",
     },
     {
-        question: "Prescott Bush, the father of former president George H.W. Bush and grandfather of former president George W. Bush, was:",
-        answers: ['The first man to fly an airplan',
+        question: "Prescott Bush, the father of former President George H.W. Bush and grandfather of former president George W. Bush, was:",
+        answers: ['The first man to fly an airplane',
         'Implicated in a coup to overthrow a sitting president of the United States of America (FDR) and supported Hitler and Mussolini',
-        'The strategist that planed the attack on D Day',
-        'Was formerly a resident of Kazakhstan, ran for president there and lost, then imigratted to America'],
+        'The strategist that planned the attack on D Day',
+        'Was formerly a resident of Kazakhstan, ran for president there and lost, then immigrated to America'],
         correct_answer: 1,
         img:'https://upload.wikimedia.org/wikipedia/commons/0/09/George_H._W._Bush_inauguration.jpg',
         src: "https://timeline.com/business-plot-overthrow-fdr-9a59a012c32a",
@@ -65,7 +65,7 @@ const QA = [
     {
         question: "In the United States, how long has blue denoted the left and red denoted the right?",
         answers: ['From the time that parties were given colors',
-        'Begining at the civil war',
+        'Beginning  at the civil war',
         'After World War 1',
         'Since the year 2000'],
         correct_answer: 3,
@@ -83,7 +83,7 @@ const QA = [
         src: "https://www.history.com/this-day-in-history/president-lincoln-suspends-the-writ-of-habeas-corpus-during-the-civil-war",
     },
     {
-        question: "The man who who shot and attempted to assisanate President Ronald Regan was?",
+        question: "The man who shot and attempted to assassinate President Ronald Regan was?",
         answers: ['An FBI agent',
         'A Russian spy',
         'An escaped convict',
@@ -94,9 +94,9 @@ const QA = [
     },
     {
         question: "In the first half of the 1900s, the US government",
-        answers: ['Poisoned alchohol in hopes to decrease the desire of its consumption, but ultimately failed and ended up killing thousands of Americans',
-        'Bandded all foreign music',
-        'Passed a law making all selling of cigerates under a bridge punishable by death',
+        answers: ['Poisoned alcohol in hopes to decrease the desire of its consumption, but ultimately failed and ended up killing thousands of Americans',
+        'Banned all foreign music',
+        'Passed a law making all selling of cigarettes under a bridge punishable by death',
         'Made Tomatoes illegal because they believed it was poisonous'],
         correct_answer: 0,
         img:'https://kosublog.com/wp-content/uploads/2016/07/blog3-768x512.jpg',
@@ -106,11 +106,11 @@ const QA = [
 
 let questionNum = 0;
 let incorrect=0;
-let rand=[];
 
 //---------------- BUTTONS -----------------//
 
 $('.quiz').on('submit',function(event){
+    //submit the answer
     event.preventDefault();
     console.log('in quiz next');
     let selected = $("input[type=radio]:checked").val();
@@ -134,9 +134,9 @@ function startQuizButton(){
 }
 
 function continueQuizButton(){
+    //when continue is clicked the next question will
+    //be prompted or the quiz will end
     console.log('continue was clicked');
-    //$( "input" ).prop( "disabled", false );
-    //$( "button .quiz" ).prop( "disabled", false );
 
     hide('.result');
     show('.quiz')
@@ -160,6 +160,7 @@ function restartQuizButton(){
 //--------------------- to hide display and to show display --------------------//
 
 function hide(element){
+    //this function will hide a class
     if( !$(element).hasClass('hide') ){
         $(element).addClass('hide');
         console.log(`hiding class: ${element}`);
@@ -167,6 +168,7 @@ function hide(element){
 }
 
 function show(element){
+    //this function will reverse the "hide" function
     if( $(element).hasClass('hide') ){
         $(element).removeClass('hide');
         console.log(`showing class: ${element}`);
@@ -175,6 +177,7 @@ function show(element){
 //--------------------- GET RANDOM FUNCTION --------------------//
 
 function getRandom(max) {
+    //generate a random number based off the number passed
     return Math.floor(Math.random() * Math.floor(max));
 }
 
@@ -199,7 +202,6 @@ function startScreen(){
     console.log('startScreen is running');
     questionNum=0;
     incorrect = 0;
-    rand = 0;
 
     $('body').css(`background-image`,`url(${QA[getRandom(QA.length)].img})`)
     
@@ -215,16 +217,15 @@ function updateQuiz(){
     //update screen messages (question,score,'.question-block','span')
     questionNum++;
     // BACKGROUND //
+    // because the image is being uploaded through css, it's not possible to use 
+    // the alt attribute without the image being defined in html. So, in the CSS
+    // there is a default grey background cover in case the image doesn't load.
     $('body').css(`background-image`,`url(${QA[questionNum-1].img})`)
-
-    //
 
     hide('.start-screen');
     show('.quiz');
-    console.log(`question NUM: ${questionNum}`);
     
     $('.question').replaceWith(`<span class="question">${questionNum}</span>`);
-    
 
     $('.quiz fieldset').replaceWith(
     `<fieldset>
@@ -247,8 +248,7 @@ function updateQuiz(){
     </label>
     <button type="submit" class="submitButton">Submit</button>
     </fieldset>
-    `
-    );
+    `);
 }
 
 function resultQuiz(bool=false){
@@ -271,21 +271,13 @@ function resultQuiz(bool=false){
         $('.result').replaceWith(
             `<div class='result'>
                 <h2>Incorrect!</h2>
-                <p>The Correct answer was:
-                <a href=${QA[questionNum-1].src}>
+                <p>The Correct answer is below. Click to read more about it.
+                <a href=${QA[questionNum-1].src} target="_blank">
                 "${QA[questionNum-1].answers[ QA[questionNum-1].correct_answer ]}"</a>
                 </p>
                 <button onclick="continueQuizButton()" type="button" class="nextButton">Continue</button>
             </div>`);
-    }
-    
-    //100px (header) + 30px (margin for label 1 was 20px and half margin for label 2 was 10px) = 130px
-  //  let h = 130+ $('header').height() + $('.question-block').height() + $('label:eq(0)').height();
-    //$('.result').offset({top: h})
-
-    //$( "input" ).prop( "disabled", true );
-    //$( ".quiz :button" ).prop( "disabled", true );
-    console.log('disabled');
+    }    
 }
 
 function endQuiz(){

@@ -7,7 +7,6 @@
   html,body{
     width: 100%;
     height: 100%;
-    max-height: 100%;
     margin:0%;
     padding:0%;
     background-image:
@@ -23,53 +22,78 @@
   
   /* ----------------banner---------------- */
   
-  header{
+  header.info{
     color: white;
     font-weight: bold;
+    height: 8%;
+    display: flex;
+    justify-content: flex-end;   
   }
   
-  header ul{
+  header.info ul{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
     list-style: none;
-    display: flex;
-    justify-content: flex-end;
-   
+    background: rgba(0,0,0,0.4);
+    border-bottom-left-radius: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: 1px solid black;
   }
-  header li{
-    display: inline-block;
-    background: rgba(0,0,0,0.3);
+  
+  header.info ul li{
+    font-size: 16px;
+  } 
+ 
+  /*
+  header.info li{
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 15px;
   }
-  header li:nth-child(1){
-    border-bottom-left-radius: 5px;
-  }
-
-  header li:nth-child(2)::after{
+ 
+  header.info li:nth-child(2)::after{
     content: "";
     margin-right: 15px;
   }
+*/
+  /* --------------------- Main ---------------------*/
   
+  main.main{
+    height: 92%;
+    padding-bottom: 8%; /* offesets the header */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
   /* ---------------- Start Screen & End Screen ----------------*/
   .start-screen, .end-screen{
     background: rgba(0,0,0,0.5);
     padding: 5px;
     border-radius: 15px;
     width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 175px;
+    text-align: center;
     }
 
   .start-screen button[type="button"],
   .end-screen button[type="button"]{
     width: 50%;
     margin-top: 10px;
-    align-self: center;
     font-style: bold;
     text-align: center;
     padding-top: 5px;
@@ -79,19 +103,8 @@
 
 
   /* ----------------QUIZ---------------- */
-  
-  main{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 100px;
-    color: white;
-  }
-
   .quiz{
+    width: 100%;
     background: rgba(0,0,0,0.7);
     padding: 10px;
     border-radius: 15px;
@@ -99,7 +112,6 @@
   
   .question-block{
     align-self: center;
-    font-size: 28px;
     font-weight: bold;
   }
   
@@ -153,8 +165,7 @@
   .result{
       color: white;
       background-color: rgba(0,0,0,0.8);
-      
-
+  
       position: absolute;
       top:0;
       bottom: 0;
@@ -172,12 +183,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+      font-size: 12px;
       margin-right:10%;
       margin-left: 10%;
   }
   .result p a, .result p a:visited{
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
     color: white;
   }
   .result p a:hover,
@@ -188,7 +202,7 @@
   
   .result button{
       background-color: white;
-      border: none;
+      border: 1px solid black;
       color: black;
       text-align: center;
       cursor: pointer;
@@ -199,10 +213,20 @@
       padding:5px;
   }
   
-
-  /* tablet screen */
-  @media screen and (max-width: 520px) {
+  /* ----------------Hide ---------------- */
+  /* added to end of css so it can overide rules for class "result" */
+  .hide{
+    display: none;
+  }
+  /* -------------- tablet screen */
+  @media screen and (min-width: 520px) {
  
+    .quiz{
+      font-size: 22px;
+    }
+    header.info ul li{
+      font-size: 20px;
+    }
     .result button{
         width: 20%;
     }
@@ -210,42 +234,80 @@
 
 /* computer screen */
 @media screen and (min-width: 768px) {
-    main{
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 100px;
-      }
-     .start-screen, .end-screen{
-       width: 80%;
+  header.info{
+    height: 5%;
+  }
+  header.info ul li{
+    font-size: 24px;
+  }
+  main.main{
+    height: 95%;
+    padding-bottom: 5%; /* offesets the header */
+  }
 
-     }
-      .result button{
-          width: 15%;
-      }
-      
+  .quiz{
+    font-size: 22px;
+    width: 80%;
+  }
+
+  header.info ul{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    list-style: none;
+    background: rgba(0,0,0,0.4);
+    border-bottom-left-radius: 5px;
+    border: 1px solid black;
+  }
+  header.info li{
+    align-self: center;
+    
+  }
+ 
+  header.info li:nth-child(2)::before{
+    content: "";
+    margin-right: 20px;
+  }
+  .start-screen, .end-screen{
+    font-size:24px;
+  }
+   .result button{
+       width: 15%;
+   }
+   .result h2{
+    font-size: 36px
+  }
+    .result p{
+      font-size: 18px;
+  }
+  .result p a, .result p a:visited{
+    font-size: 22px;
+  }
 }
 
 /* computer screen */
 @media screen and (min-width: 1024px) {
+
   
-   .start-screen, .end-screen{
-     width: 60%;
-     max-width: 400px;
+  header.info ul li{
+    font-size: 30px;
+  }
 
-   }
-    .result button{
-        width: 15%;
-        max-width: 200px;
-    }
-    
-}
+  .quiz{
+    font-size: 26;
+  }
+  .result h2{
+    font-size: 42px
+  }
+  .result p{
+    font-size: 24px;
+  }
+  .result p a, .result p a:visited{
+    font-size: 26px;
+  }
+  .start-screen, .end-screen{
+    font-size:28px;
+  }
 
- /* ----------------Hide ---------------- */
- /* added to end of css so it can overide rules for class "result" */
- .hide{
-    display: none;
 }
