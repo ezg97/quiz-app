@@ -9,7 +9,6 @@ const QA = [
         'A Russian spy'],
         correct_answer: 2,
         img:'http://www.scholastic.com/content/images/articles/sn_ts/sn_ts_011210_hdr.jpg',
-        alt: "Image of MLK Jr",
         src: "https://www.globalresearch.ca/court-decision-u-s-government-agencies-found-guilty-in-martin-luther-kings-assassination-2/5320024",
     },
     {

@@ -3,7 +3,10 @@
     margin: 0%;
     padding: 0%;
   }
-
+  /* It is not possible to give set up an alt attribute if no img tag was definied
+      inside of the html. For that reason there are no alt attributes for the images.
+      However, there is a default background image (the gradient) which will be displayed
+      in case any of the images are corrupted*/
   html,body{
     width: 100%;
     height: 100%;
@@ -16,8 +19,6 @@
     );
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    alt: 'no image';
-
   }
   
   /* ----------------banner---------------- */
@@ -50,21 +51,9 @@
     font-size: 16px;
   } 
  
-  /*
-  header.info li{
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 15px;
-  }
- 
-  header.info li:nth-child(2)::after{
-    content: "";
-    margin-right: 15px;
-  }
-*/
   /* --------------------- Main ---------------------*/
   
-  main.main{
+  [role="main"]{
     height: 92%;
     padding-bottom: 8%; /* offesets the header */
     width: 90%;
@@ -123,7 +112,7 @@
     display: flex;
   }
   
-  label{
+  .quiz label{
     background: rgba(0,0,0,0.7);
     border: 1px solid grey;
     margin-top: 10px;
@@ -189,7 +178,6 @@
       margin-left: 10%;
   }
   .result p a, .result p a:visited{
-    text-decoration: none;
     font-weight: bold;
     font-size: 18px;
     color: white;
@@ -240,7 +228,7 @@
   header.info ul li{
     font-size: 24px;
   }
-  main.main{
+  [role="main"]{
     height: 95%;
     padding-bottom: 5%; /* offesets the header */
   }
